@@ -37,7 +37,14 @@ const exitBtn = document.getElementById('exitBtn');
 let pendingAction = null;
 
 // Load tasks
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+let tasks = [];
+
+try {
+    tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+} catch (error) {
+    console.log("Could not load saved tasks.");
+    tasks = [];
+}
 
 
 // Fix existing IDs - convert timestamps to sequential numbers
