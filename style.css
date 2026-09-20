@@ -1,0 +1,724 @@
+/* ==========================================
+   Global Styles
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e8e8e8;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==========================================
+   Dashboard Card - Normal Size
+   ========================================== */
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.dashboard-card {
+    border-radius: 24px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+    width: 100%;
+}
+
+.dashboard-card .card-body {
+    padding: 2rem 2.5rem;
+}
+
+
+/* ==========================================
+   Header Container (Title + Exit Button)
+   ========================================== */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+}
+
+
+/* ==========================================
+   Page Title
+   ========================================== */
+
+.page-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #0b1a2b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-title i {
+    color: #2a7de1;
+    font-size: 1.8rem;
+}
+
+.page-subtitle {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #4f6a84;
+    margin-left: 4px;
+}
+
+
+/* ==========================================
+   Exit Button
+   ========================================== */
+
+.btn-exit {
+    background: #dc2626;
+    border: none;
+    border-radius: 60px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.25s;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.btn-exit:hover {
+    background: #b91c1c;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+}
+
+
+/* ==========================================
+   Add Task Row
+   ========================================== */
+
+.add-task-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    background: #f8faff;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    border-radius: 60px;
+    border: 1px solid #e6ecf3;
+}
+
+.btn-add-task {
+    background: #0d6efd;
+    border: none;
+    border-radius: 60px;
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.25s;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-add-task:hover {
+    background: #0b5ed7;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(13, 110, 253, 0.3);
+}
+
+
+/* ==========================================
+   Toolbar (Search + Filter)
+   ========================================== */
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 10px;
+    margin-bottom: 1.5rem;
+}
+
+.search-box {
+    position: relative;
+    flex: 1 1 280px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b9ab0;
+    font-size: 1rem;
+}
+
+.search-box input {
+    padding-left: 2.6rem;
+    border-radius: 60px;
+    border: 1px solid #dde3ed;
+    background: #f8faff;
+    height: 44px;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #2a7de1;
+    box-shadow: 0 0 0 4px rgba(42, 125, 225, 0.12);
+    background: white;
+}
+
+.filter-group select {
+    border-radius: 60px;
+    padding: 0.5rem 2.2rem 0.5rem 1.2rem;
+    border: 1px solid #dde3ed;
+    background: #f8faff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 8"><path fill="%23455a71" d="M6 8L0 0h12z"/></svg>') no-repeat right 1rem center;
+    background-size: 12px;
+    appearance: none;
+    font-size: 0.9rem;
+    color: #1a2b3e;
+    height: 44px;
+    min-width: 150px;
+    cursor: pointer;
+    outline: none;
+}
+
+.filter-group select:focus {
+    border-color: #2a7de1;
+    box-shadow: 0 0 0 4px rgba(42, 125, 225, 0.12);
+}
+
+
+/* ==========================================
+   Tasks Table
+   ========================================== */
+
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 0.5rem;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.tasks-table th {
+    text-align: left;
+    padding: 0.9rem 0.6rem 0.9rem 0;
+    font-weight: 700;
+    color: #1a2b3e;
+    border-bottom: 2px solid #2a7de1;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    background: #f0f7ff;
+}
+
+.tasks-table td {
+    padding: 0.8rem 0.6rem 0.8rem 0;
+    border-bottom: 1px solid #eef2f7;
+    vertical-align: middle;
+}
+
+.tasks-table tr:last-child td {
+    border-bottom: none;
+}
+
+.tasks-table tr:hover {
+    background: #f8faff;
+}
+
+.task-id {
+    font-weight: 600;
+    color: #4a5d73;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.task-title {
+    font-weight: 500;
+    color: #0b1a2b;
+}
+
+.text-end {
+    text-align: right;
+}
+
+
+/* ==========================================
+   Status Badges
+   ========================================== */
+
+.status-badge {
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.status-badge.completed {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+
+/* ==========================================
+   Action Buttons
+   ========================================== */
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 40px;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.action-btn i {
+    font-size: 0.85rem;
+}
+
+
+/* Toggle button - Green */
+
+.action-btn.toggle-btn {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.action-btn.toggle-btn:hover {
+    background: #6ee7b7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 95, 70, 0.2);
+}
+
+
+/* Edit button - Blue */
+
+.action-btn.edit-btn {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.action-btn.edit-btn:hover {
+    background: #93b5f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+}
+
+
+/* Delete button - Red */
+
+.action-btn.delete-btn {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.action-btn.delete-btn:hover {
+    background: #fca5a5;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(153, 27, 27, 0.2);
+}
+
+.empty-message {
+    color: #7b8ca3;
+    text-align: center;
+    padding: 2.5rem 0;
+    font-style: italic;
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   Statistics Row
+   ========================================== */
+
+.stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 3rem;
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 2px solid #e6ecf3;
+}
+
+.stat-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.stat-item strong {
+    color: #1d2f44;
+    font-weight: 700;
+}
+
+.stat-number {
+    background: #eef2ff;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-weight: 700;
+    color: #1e3a8a;
+    font-size: 0.95rem;
+}
+
+
+/* ==========================================
+   Modal Styles
+   ========================================== */
+
+.modal-content {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 2px solid #eef2f7;
+    padding: 1.2rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: #0b1a2b;
+    font-size: 1.2rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 2px solid #eef2f7;
+    padding: 1rem 1.5rem;
+}
+
+.modal-footer .btn-primary {
+    background: #2563eb;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+.modal-footer .btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.modal-footer .btn-secondary {
+    background: #6b7280;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+.modal-footer .btn-secondary:hover {
+    background: #4b5563;
+}
+
+
+/* ==========================================
+   Confirmation & Exit Modals
+   ========================================== */
+
+#confirmModal .modal-content,
+#exitModal .modal-content {
+    border-radius: 16px;
+}
+
+#confirmModal .modal-header,
+#exitModal .modal-header {
+    border-bottom: 2px solid #fee2e2;
+}
+
+#confirmModal .modal-footer,
+#exitModal .modal-footer {
+    border-top: 2px solid #f3f4f6;
+}
+
+#confirmModal .btn-danger,
+#exitModal .btn-danger {
+    background: #dc2626;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+#confirmModal .btn-danger:hover,
+#exitModal .btn-danger:hover {
+    background: #b91c1c;
+}
+
+#confirmModal .btn-secondary,
+#exitModal .btn-secondary {
+    background: #6b7280;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+#confirmModal .btn-secondary:hover,
+#exitModal .btn-secondary:hover {
+    background: #4b5563;
+}
+
+#confirmModal .btn-primary {
+    background: #2563eb;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+}
+
+#confirmModal .btn-primary:hover {
+    background: #1d4ed8;
+}
+
+#confirmModal .btn-warning {
+    background: #d97706;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+#confirmModal .btn-warning:hover {
+    background: #b45309;
+    color: white;
+}
+
+
+/* ==========================================
+   Toast
+   ========================================== */
+
+.toast {
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: none;
+}
+
+.toast-body {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+}
+
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 768px) {
+    .dashboard-card .card-body {
+        padding: 1.2rem 1rem;
+    }
+    .page-title {
+        font-size: 1.2rem;
+        flex-wrap: wrap;
+    }
+    .page-title i {
+        font-size: 1.4rem;
+    }
+    .page-subtitle {
+        font-size: 0.8rem;
+    }
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    .btn-exit {
+        width: 100%;
+        justify-content: center;
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-group select {
+        width: 100%;
+        min-width: unset;
+        height: 40px;
+        font-size: 0.85rem;
+    }
+    .search-box input {
+        height: 40px;
+        font-size: 0.85rem;
+    }
+    .add-task-row {
+        padding: 0.4rem 0.8rem 0.4rem 1.2rem;
+        border-radius: 30px;
+    }
+    .btn-add-task {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+    .tasks-table {
+        font-size: 0.85rem;
+    }
+    .tasks-table th,
+    .tasks-table td {
+        padding: 0.6rem 0.3rem 0.6rem 0;
+    }
+    .task-id {
+        font-size: 0.75rem;
+    }
+    .task-title {
+        font-size: 0.85rem;
+    }
+    .status-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.7rem;
+    }
+    .action-btn {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.5rem;
+        gap: 3px;
+    }
+    .action-btn i {
+        font-size: 0.7rem;
+    }
+    .action-buttons {
+        gap: 4px;
+    }
+    .stats-row {
+        gap: 0.8rem 1.5rem;
+        margin-top: 1rem;
+        padding-top: 0.8rem;
+    }
+    .stat-item {
+        font-size: 0.85rem;
+    }
+    .stat-number {
+        padding: 0.15rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-card .card-body {
+        padding: 0.8rem 0.6rem;
+    }
+    .page-title {
+        font-size: 1rem;
+    }
+    .page-title i {
+        font-size: 1.2rem;
+    }
+    .page-subtitle {
+        font-size: 0.7rem;
+    }
+    .tasks-table {
+        font-size: 0.75rem;
+    }
+    .tasks-table th,
+    .tasks-table td {
+        padding: 0.4rem 0.2rem 0.4rem 0;
+    }
+    .task-id {
+        font-size: 0.65rem;
+    }
+    .task-title {
+        font-size: 0.75rem;
+    }
+    .status-badge {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.5rem;
+    }
+    .action-btn {
+        font-size: 0.5rem;
+        padding: 0.15rem 0.35rem;
+        gap: 2px;
+    }
+    .action-btn i {
+        font-size: 0.6rem;
+    }
+    .action-buttons {
+        gap: 3px;
+    }
+    .btn-add-task {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.75rem;
+        gap: 4px;
+    }
+    .add-task-row {
+        padding: 0.3rem 0.5rem 0.3rem 0.8rem;
+    }
+    .stat-item {
+        font-size: 0.75rem;
+    }
+    .stat-number {
+        padding: 0.1rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    .stats-row {
+        gap: 0.5rem 1rem;
+        padding-top: 0.5rem;
+        margin-top: 0.8rem;
+    }
+    .btn-exit {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    .modal-body {
+        padding: 1rem;
+    }
+    .modal-header,
+    .modal-footer {
+        padding: 0.8rem 1rem;
+    }
+}
