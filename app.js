@@ -103,7 +103,7 @@ rl.question("\nChoose an option: ", function(choice) {
 
             if (task) {
 
-                task.completed = true;
+                task.completed = !task.completed;
 
                 fs.writeFileSync(
                     "tasks.json",
