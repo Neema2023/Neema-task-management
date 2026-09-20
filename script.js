@@ -259,7 +259,7 @@ function displayTasks() {
     if (filteredTasks.length === 0) {
         taskList.innerHTML = `
             <tr>
-                <td colspan="4" class="empty-message">No tasks found</td>
+                <td colspan="4" class="empty-message">No tasks found. Try a different search or filter.</td>
             </tr>
         `;
     } else {
