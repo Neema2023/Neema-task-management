@@ -102,7 +102,7 @@ rl.question("\nChoose an option: ", function(choice) {
             });
 
             if (task) {
-
+                // change on branch1
                 task.completed = !task.completed;
 
                 fs.writeFileSync(
@@ -165,10 +165,10 @@ rl.question("\nChoose an option: ", function(choice) {
         rl.question("Enter keyword: ", function(keyword) {
 
             const results = tasks.filter(function(task) {
-
+                // change on branch 2
                 return task.title
                     .toLowerCase()
-                    .includes(keyword.toLowerCase());
+                    .includes(keyword.trim().toLowerCase());
 
             });
 
