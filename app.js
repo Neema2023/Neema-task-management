@@ -27,7 +27,8 @@ console.log("3. Update Task");
 console.log("4. Delete Task");
 console.log("5. Search Task");
 console.log("6. Filter Tasks");
-console.log("7. Exit");
+console.log("7. Task Statistics");
+console.log("8. Exit");
 
 rl.question("\nChoose an option: ", function(choice) {
 
@@ -156,6 +157,24 @@ rl.question("\nChoose an option: ", function(choice) {
             rl.close();
 
         });
+
+    }
+
+    // STATISTICS
+    else if (choice == "7") {
+
+        const totalTasks = tasks.length;
+        const completedTasks = tasks.filter(function(task) {
+            return task.completed;
+        }).length;
+        const pendingTasks = totalTasks - completedTasks;
+
+        console.log("\n==== TASK STATISTICS ====");
+        console.log("Total Tasks: " + totalTasks);
+        console.log("Completed Tasks: " + completedTasks);
+        console.log("Pending Tasks: " + pendingTasks);
+
+        rl.close();
 
     }
 
